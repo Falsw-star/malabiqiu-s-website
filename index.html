@@ -17,8 +17,9 @@
         .cover {
             opacity: 0;
             transition: all ease-in-out 2s;
-            width: 150%;
-            height: 150%;
+            width: 100%;
+            height: 100%;
+            transform: scale(1.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -31,15 +32,15 @@
             position: absolute;
         }
         .title {
+            transform: scale(0.2);
             transition: all ease-in-out 2s;
             text-align: center;
             width: 1000px;
             position: fixed;
-            font-size: 20px;
+            font-size: 60px;
             font-family: Georgia, 'Times New Roman', Times, serif;
             display: inline;
             color: #474747;
-            line-height: 20px;
             opacity: 0;
         }
         .mlbq {
@@ -86,10 +87,9 @@
         isclicked = 0;
     }
     window.onload = () => {
-        title.style.fontSize = "60px";
+        title.style.transform = "scale(1)"
         title.style.opacity = "1";
-        cover.style.height = "100%";
-        cover.style.width = "100%";
+        cover.style.transform = "scale(1)"
         cover.style.opacity = "1";
     }
 </script>
