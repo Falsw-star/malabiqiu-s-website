@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>--马拉比丘--</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .cover {
+            opacity: 0;
+            transition: all ease-in-out 2s;
+            width: 150%;
+            height: 150%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(./static/bg4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            align-content: center;
+            justify-content: center;
+            position: absolute;
+        }
+        .title {
+            transition: all ease-in-out 2s;
+            text-align: center;
+            width: 1000px;
+            position: fixed;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            display: inline;
+            color: #474747;
+            line-height: 20px;
+            opacity: 0;
+        }
+        .mlbq {
+            display: inline-block;
+            color: #222222;
+            border-bottom: brown 1px;
+            font-style: italic;
+            cursor: pointer;
+        }
+        .eng {
+            font-size: 5px;
+            height: 10px;
+            line-height: 10px;
+            margin: 0 auto;
+        }
+        .logo {
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="cover" class="cover">
+        <div id="title" class="title">欢迎来到<div id="mlbq" class="mlbq"></div>！</div>
+    </div>
+    <img src="./static/马拉比丘.png" class="logo">
+</body>
+<script>
+    var title = document.getElementById("title");
+    var mlbq = document.getElementById("mlbq");
+    var cover = document.getElementById("cover");
+    mlbq.innerText = "马拉比丘";
+    var isclicked = 0;
+    mlbq.onclick = () => {
+        if (isclicked === 1) {
+            window.location.href = "https://qm.qq.com/cgi-bin/qm/qr?k=YxehdBO3chGekZ5t2m5lFgO3xgcMX3mD&jump_from=webapi&authKey=OPf6SqCFxjOFTUJ+ekUmfhrsenIS2Wi9/jKDBjfqOlewuiiZzrBTJMn2h0ZacP1g";
+        } else {
+            isclicked = 1;
+        }
+        mlbq.innerText = "进入群聊";
+    }
+    mlbq.onmouseleave = () => {
+        mlbq.innerText = "马拉比丘";
+        isclicked = 0;
+    }
+    window.onload = () => {
+        title.style.fontSize = "60px";
+        title.style.opacity = "1";
+        cover.style.height = "100%";
+        cover.style.width = "100%";
+        cover.style.opacity = "1";
+    }
+</script>
+</html>
